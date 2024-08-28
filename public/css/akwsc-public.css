@@ -1,0 +1,42 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+/* Start "Check Availability" button */
+.akwsc-check-availability-button {
+    margin: 10px 10px;
+    padding: 13px 15px;
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    float: none;
+}
+
+.akwsc-check-availability-button:hover {
+    background-color: #005177;
+}
+/* End "Check Availability" button */
+
+.akwsc_quantity_input{
+    width: 3.631em;
+    padding: .9rem 1.1rem;
+    margin: 0 4px 0 0;
+    text-align: center;
+}
+
+/* Start message box design */
+.success-message {
+    color: green;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+}
+/* End message box design */
