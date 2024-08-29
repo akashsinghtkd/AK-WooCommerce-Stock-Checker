@@ -77,6 +77,7 @@ class Akwsc_Plugin_Messages
             'group_product_not_valid'   => __('Please ensure at least one product quantity is greater than 0.', AKWSC_TEXT_DOMAIN),
             'product_id_invalid'        => __('Product ID is missing or invalid.', AKWSC_TEXT_DOMAIN),
             'unexpected_error'          => __('An unexpected error occurred. Please try again later.', AKWSC_TEXT_DOMAIN),
+            'variable_not_found'       => __('Please select the variable option.', AKWSC_TEXT_DOMAIN),
         );
 
         if ($error_key == 'required_data') {

@@ -108,11 +108,11 @@ class Akwsc_Public
 				'stock_check' => 'stock_check_action'
 			],
 			'message' => [
-				'enter_valid_number' => Akwsc_Plugin_Messages::get_error_message('enter_valid_number'),
-				'group_product_not_valid' => Akwsc_Plugin_Messages::get_error_message('group_product_not_valid'),
-				'product_id_invalid' => Akwsc_Plugin_Messages::get_error_message('product_id_invalid'),
-				'unexpected_error' => Akwsc_Plugin_Messages::get_error_message('unexpected_error'),
-
+				'enter_valid_number' 		=> Akwsc_Plugin_Messages::get_error_message('enter_valid_number'),
+				'group_product_not_valid' 	=> Akwsc_Plugin_Messages::get_error_message('group_product_not_valid'),
+				'product_id_invalid' 		=> Akwsc_Plugin_Messages::get_error_message('product_id_invalid'),
+				'unexpected_error' 			=> Akwsc_Plugin_Messages::get_error_message('unexpected_error'),
+				'variable_not_found' 		=> Akwsc_Plugin_Messages::get_error_message('variable_not_found'),
 			]
 		));
 	}
@@ -188,9 +188,9 @@ class Akwsc_Public
 
 		try {
 			// Sanitize and validate input
-			$product_id = filter_input(INPUT_POST, 'product_id', FILTER_SANITIZE_NUMBER_INT);
-			$products_data = isset($_POST['products']) ? $_POST['products'] : [];
-			$requested_qty = filter_input(INPUT_POST, 'requested_qty', FILTER_SANITIZE_NUMBER_INT);
+			$product_id 	= filter_input(INPUT_POST, 'product_id', FILTER_SANITIZE_NUMBER_INT);
+			$products_data 	= isset($_POST['products']) ? $_POST['products'] : [];
+			$requested_qty 	= filter_input(INPUT_POST, 'requested_qty', FILTER_SANITIZE_NUMBER_INT);
 
 			// Check for missing or invalid fields
 			if (!$product_id) {
@@ -241,11 +241,11 @@ class Akwsc_Public
 
 		foreach ($products_data as $product_data) {
 			// Sanitize requested 
-			$product_data['product_id'] = filter_var($product_data['product_id'], FILTER_SANITIZE_NUMBER_INT);
-			$product_data['requested_qty'] = filter_var($product_data['requested_qty'], FILTER_SANITIZE_NUMBER_INT);
+			$product_data['product_id'] 	= filter_var($product_data['product_id'], FILTER_SANITIZE_NUMBER_INT);
+			$product_data['requested_qty'] 	= filter_var($product_data['requested_qty'], FILTER_SANITIZE_NUMBER_INT);
 
-			$child_id = isset($product_data['product_id']) ? intval($product_data['product_id']) : 0;
-			$requested_qty = isset($product_data['requested_qty']) ? intval($product_data['requested_qty']) : 0;
+			$child_id 		= isset($product_data['product_id']) ? intval($product_data['product_id']) : 0;
+			$requested_qty 	= isset($product_data['requested_qty']) ? intval($product_data['requested_qty']) : 0;
 
 			if ($child_id && $requested_qty > 0) {
 				$child_product = wc_get_product($child_id);

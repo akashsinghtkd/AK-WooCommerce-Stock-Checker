@@ -121,9 +121,10 @@
 	
 		} else {
 			if (product_type === 'variable') {
-				const variable_product_id = $form.find('input[name="variation_id"]').val();
-				if( variable_product_id && variable_product_id != 0 ) {
-					product_id = variable_product_id;
+				product_id = $form.find('input[name="variation_id"]').val();
+				if (!product_id || product_id === '0') {
+					$messageBox.html('<span class="error-message">'+akwsc.message.variable_not_found+'</span>');
+					return;
 				}
 			}
 	
